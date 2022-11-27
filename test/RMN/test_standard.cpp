@@ -94,6 +94,6 @@ namespace TEST::ROMAN {
     TEST_CASE("Convert to number",
               sTag)
     {
-//        CHECK(14 == RMN::CONV::ConvertToNumber("XIV").value());
+        CHECK(14 == RMN::CONV::ConvertToNumber("XIV").value());
     }
 } // TEST::RMN

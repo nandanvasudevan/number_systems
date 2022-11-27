@@ -7,7 +7,7 @@
 #include "roman/standard/all.hpp"
 #include "roman/Converter.hpp"
 
-static const std::string sTag = "Roman";
+static const std::string sTag = "[roman][standard]";
 
 namespace TEST::ROMAN {
     TEST_CASE("Defaults",

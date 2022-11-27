@@ -8,7 +8,7 @@ find_package(PkgConfig REQUIRED)
 
 pkg_check_modules(CATCH2 REQUIRED catch2-with-main)
 
-SET(SRC src/roman/CBase.cpp src/roman/CBase.hpp  src/roman/standard/X.hpp src/roman/standard/I.hpp src/roman/standard/C.hpp src/roman/standard/D.hpp src/roman/standard/M.hpp src/roman/standard/L.hpp src/roman/Converter.cpp src/roman/Converter.hpp src/roman/standard/all.hpp src/roman/standard/V.hpp)
+SET(SRC src/roman/CBase.cpp src/roman/CBase.hpp  src/roman/standard/X.hpp src/roman/standard/I.hpp src/roman/standard/C.hpp src/roman/standard/D.hpp src/roman/standard/M.hpp src/roman/standard/L.hpp src/roman/Converter.cpp src/roman/Converter.hpp src/roman/standard/all.hpp src/roman/standard/V.hpp src/roman/standard/IX.hpp src/roman/standard/XL.hpp src/roman/standard/CD.hpp src/roman/standard/CM.hpp src/roman/standard/XC.hpp src/roman/standard/IV.hpp)
 add_executable(number_systems src/main.cpp ${SRC})
 
 SET(TEST_SRC test/RMN/test_standard.cpp)

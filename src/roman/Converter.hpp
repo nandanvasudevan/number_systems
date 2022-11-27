@@ -7,10 +7,19 @@
 
 #include <optional>
 #include <string>
+#include <string_view>
 
 namespace RMN::CONV {
 
-    [[nodiscard]] std::optional<std::string> Convert(const int iValue);
+    /**
+     * @brief Convert a number into a roman numeral string.
+     * @param iValue Value to be converted
+     * @returns `std::nullopt` if conversion was not possible.
+     * @returns `std::string` representation of the value.
+     */
+    [[nodiscard]] std::optional<std::string> ConvertToString(const int iValue);
+
+    [[nodiscard]] std::optional<int> ConvertToNumber(const std::string_view sValue);
 
 } // RMN
 

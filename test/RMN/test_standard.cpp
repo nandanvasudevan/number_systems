@@ -10,8 +10,8 @@
 static const std::string sTag = "Roman";
 
 namespace TEST::ROMAN {
-    TEST_CASE("Defaults")
-
+    TEST_CASE("Defaults",
+              sTag)
     {
         SECTION("I")
         {
@@ -21,7 +21,7 @@ namespace TEST::ROMAN {
             CHECK(I == iValue);
             CHECK("I" == std::string(I));
 
-            CHECK("I" == RMN::CONV::Convert(iValue).value());
+            CHECK("I" == RMN::CONV::ConvertToString(iValue).value());
         }
 
         SECTION("X")
@@ -32,7 +32,7 @@ namespace TEST::ROMAN {
             CHECK(X == iValue);
             CHECK("X" == std::string(X));
 
-            CHECK("X" == RMN::CONV::Convert(iValue).value());
+            CHECK("X" == RMN::CONV::ConvertToString(iValue).value());
         }
 
         SECTION("L")
@@ -43,7 +43,7 @@ namespace TEST::ROMAN {
             CHECK(L == iValue);
             CHECK("L" == std::string(L));
 
-            CHECK("L" == RMN::CONV::Convert(iValue).value());
+            CHECK("L" == RMN::CONV::ConvertToString(iValue).value());
         }
 
         SECTION("C")
@@ -54,7 +54,7 @@ namespace TEST::ROMAN {
             CHECK(C == iValue);
             CHECK("C" == std::string(C));
 
-            CHECK("C" == RMN::CONV::Convert(iValue).value());
+            CHECK("C" == RMN::CONV::ConvertToString(iValue).value());
         }
 
         SECTION("D")
@@ -65,7 +65,7 @@ namespace TEST::ROMAN {
             CHECK(D == iValue);
             CHECK("D" == std::string(D));
 
-            CHECK("D" == RMN::CONV::Convert(iValue).value());
+            CHECK("D" == RMN::CONV::ConvertToString(iValue).value());
         }
 
         SECTION("M")
@@ -76,12 +76,24 @@ namespace TEST::ROMAN {
             CHECK(M == iValue);
             CHECK("M" == std::string(M));
 
-            CHECK("M" == RMN::CONV::Convert(iValue).value());
+            CHECK("M" == RMN::CONV::ConvertToString(iValue).value());
         }
     }
 
-    TEST_CASE("Simple conversions")
+    TEST_CASE("Convert to string",
+              sTag)
     {
-        CHECK("MMMDCCXXIV" == RMN::CONV::Convert(3724).value());
+        CHECK("MMMDCCXXIV" == RMN::CONV::ConvertToString(3724).value());
+        CHECK("LVI" == RMN::CONV::ConvertToString(56).value());
+        CHECK("XLVIII" == RMN::CONV::ConvertToString(48).value());
+        CHECK("V" == RMN::CONV::ConvertToString(5).value());
+        CHECK("IV" == RMN::CONV::ConvertToString(4).value());
+        CHECK("III" == RMN::CONV::ConvertToString(3).value());
+    }
+
+    TEST_CASE("Convert to number",
+              sTag)
+    {
+//        CHECK(14 == RMN::CONV::ConvertToNumber("XIV").value());
     }
 } // TEST::RMN
